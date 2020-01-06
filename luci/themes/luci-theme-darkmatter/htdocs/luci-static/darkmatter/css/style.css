@@ -616,6 +616,7 @@ h3 {
 	background: #2f2e2a
 }
 */
+#cpu_free>div,
 #conns>div,
 #membuff>div,
 #memfree>div,
@@ -628,6 +629,7 @@ h3 {
     border: 1px solid #000 !important
 }
 
+#cpu_free>div>div,
 #conns>div>div,
 #membuff>div>div,
 #memfree>div>div,
@@ -638,6 +640,7 @@ h3 {
     background-color: rgba(117, 137, 12, .75) !important
 }
 
+#cpu_free>div>div>div,
 #conns>div>div>div,
 #membuff>div>div>div,
 #memfree>div>div>div,
