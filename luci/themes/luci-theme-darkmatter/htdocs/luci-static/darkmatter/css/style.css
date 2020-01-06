@@ -467,23 +467,35 @@ h3 {
     margin: 2rem 0 0
 }
 */
-.cbi-section {
-    margin-bottom: 1rem;
-    border: 1px solid rgba(37, 35, 35, .25);
-    font-weight: 400;
+div.cbi-section, fieldset {
+    margin: 20px 0;
+    border: 1px;
+    font-weight: normal;
     font-style: normal;
     line-height: 1;
     font-family: inherit;
     min-width: inherit;
-    overflow-x: auto;
+    overflow-x: hidden;
     overflow-y: hidden;
-    border-radius: 0;
-    -webkit-overflow-scrolling: touch;
-    background: #2f2e2a
+    border-radius: 4px;
 }
 
 .cbi-map-descr+fieldset {
     margin-top: 1rem
+}
+
+.panel-title {
+    width: 100%;
+    display: block;
+    margin-bottom: 0;
+    padding: 5px;
+    border-bottom: 0px solid rgba(0, 0, 0, .05);
+    line-height: 1.5;
+    margin-bottom: 0rem;
+    letter-spacing: 0.1rem;
+    color: #fff;
+    font-weight: bold;
+    font-size: 15px;
 }
 
 legend {
@@ -507,8 +519,8 @@ h3 {
     padding-bottom: 0;
     background: #2f2e2a;
     padding-left: 8px;
-    border-bottom: 1px solid #1f1e1a;
-    border-top: 1px solid #1f1e1a
+    /* border-bottom: 1px solid #1f1e1a;
+    border-top: 1px solid #1f1e1a */
 }
 /*
 .cbi-section>div {
@@ -543,6 +555,7 @@ h3 {
 */
 .tr.placeholder {
     height: calc(3em + 20px);
+    background: unset !important;
 }
 
 .tr.placeholder > .td {
@@ -565,7 +578,7 @@ h3 {
     padding: 0;
     font-size: .85rem;
     position: relative;
-	border-spacing: 10px;
+	/* border-spacing: 10px; */
 	background: #2f2e2a;
 }
 
@@ -576,7 +589,8 @@ h3 {
 
 .table .tr .td,
 .table .tr .th {
-    white-space: nowrap
+    white-space: nowrap;
+	padding: 10px 15px;
 }
 
 .table .tr {
@@ -899,8 +913,9 @@ form.inline+form.inline {
     padding: .5rem;
     color: #1f1e1a;
     font-size: small;
-    background: #6f6e6a;
-    text-shadow: none
+    background: #2f2e2a;
+    text-shadow: none;
+    color: #fff;
 }
 
 .hidden {
