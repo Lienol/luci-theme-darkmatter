@@ -13,6 +13,7 @@ header>.container>.brand {
 
 .main,
 .cbi-section>h3,
+.panel-title,
 header,
 table {
     width: 100%
@@ -459,6 +460,7 @@ h2 {
 }
 
 .cbi-section>h3,
+.panel-title,
 h3 {
     font-size: 1.4rem
 }
@@ -517,7 +519,7 @@ h3 {
     display: block;
     line-height: 2.2rem;
     padding-bottom: 0;
-    background: #2f2e2a;
+    /* background: #2f2e2a; */
     padding-left: 8px;
     /* border-bottom: 1px solid #1f1e1a;
     border-top: 1px solid #1f1e1a */
@@ -544,6 +546,9 @@ h3 {
 .table .td {
     display: table-cell;
     vertical-align: middle;
+	padding: 5px 10px;
+    line-height: 18px;
+    text-align: left;
 	text-align: center;
 }
 /*
@@ -569,7 +574,7 @@ h3 {
 
 .table {
     border-spacing: 0;
-    border-collapse: separate;
+    border-collapse: collapse;
     border: none;
     margin: 0 !important;
 	display: table;
@@ -742,9 +747,13 @@ form.inline+form.inline {
     background: #dbb013 !important;
     background: -moz-radial-gradient(center, ellipse cover, #dbb013 0, #c69611 100%) !important;
     background: -webkit-radial-gradient(center, ellipse cover, #dbb013 0, #c69611 100%) !important;
-    background: radial-gradient(ellipse at center, #dbb013 0, #c69611 100%) !important
+    background: radial-gradient(ellipse at center, #dbb013 0, #c69611 100%) !important;
+    cursor: pointer;
 }
 
+[data-tab="init"] .td:nth-of-type(3)>button,
+[data-tab="init"] .td:nth-of-type(5)>button,
+.cbi-button-positive,
 .cbi-button-add,
 .cbi-button-find,
 .cbi-button-reload,
@@ -759,9 +768,14 @@ form.inline+form.inline {
     border: 1px solid #799037 !important;
     background: #7eaa0f !important;
     background: -webkit-radial-gradient(center ellipse, #7eaa0f 0, #6d8006 100%) !important;
-    background: radial-gradient(ellipse at center, #7eaa0f 0, #6d8006 100%) !important
+    background: radial-gradient(ellipse at center, #7eaa0f 0, #6d8006 100%) !important;
+    cursor: pointer;
+    padding:4.8px;
 }
 
+[data-tab="init"] .td:nth-of-type(4)>button,
+.cbi-button-action,
+.cbi-button-neutral,
 .cbi-button-apply,
 .cbi-button-edit,
 .cbi-input-apply {
@@ -769,9 +783,13 @@ form.inline+form.inline {
     border: 1px solid #969696 !important;
     background: #dbb013 !important;
     background: -webkit-radial-gradient(center ellipse, #e0dbcf 0, rgba(224, 219, 204, .7) 100%) !important;
-    background: radial-gradient(ellipse at center, #e0dbcf 0, rgba(224, 219, 204, .7) 100%) !important
+    background: radial-gradient(ellipse at center, #e0dbcf 0, rgba(224, 219, 204, .7) 100%) !important;
+    background: radial-gradient(ellipse at center, #e0dbcf 0, rgba(224, 219, 204, .7) 100%) !important;
+    cursor: pointer;
+    padding:4.8px;
 }
 
+[data-tab="init"] .td:nth-of-type(6)>button,
 .cbi-button-remove,
 .cbi-input-reset,
 .cbi-section-remove>.cbi-button {
@@ -780,7 +798,9 @@ form.inline+form.inline {
     background: #db4213 !important;
     background: -moz-radial-gradient(center, ellipse cover, #db4213 0, #c93612 100%) !important;
     background: -webkit-radial-gradient(center, ellipse cover, #db4213 0, #c93612 100%) !important;
-    background: radial-gradient(ellipse at center, #db4213 0, #c93612 100%) !important
+    background: radial-gradient(ellipse at center, #db4213 0, #c93612 100%) !important;
+    cursor: pointer;
+    padding:4.8px;
 }
 
 .a-to-btn {
@@ -836,6 +856,7 @@ form.inline+form.inline {
     background: url(../img/noise.png) #171612
 }
 
+.cbi-section-node .cbi-value:nth-of-type(2n),
 .cbi-section-node:nth-of-type(2n),
 .cbi-section-remove:nth-of-type(2n) {
     background-color: #3f3e3a
@@ -843,6 +864,7 @@ form.inline+form.inline {
 .cbi-section-node{
 	background: #2f2e2a
 }
+
 .cbi-section-node-tabbed {
     padding: 0;
     margin-top: 0;
@@ -916,7 +938,7 @@ form.inline+form.inline {
     padding: .5rem;
     color: #1f1e1a;
     font-size: small;
-    background: #2f2e2a;
+    /* background: #2f2e2a; */
     text-shadow: none;
     color: #fff;
 }
@@ -1893,12 +1915,13 @@ textarea {
     }
 
     .cbi-value-title {
-        width: 100%;
+        width: 40%;
         min-width: 0 !important;
-        display: block;
-        margin-top: 1rem;
+        /* display: block; */
+        margin-top: .5rem;
         margin-bottom: .5rem;
-        text-align: left
+        text-align: left;
+		padding-left: .5rem;
     }
 
     .cbi-value-description,
@@ -1907,7 +1930,7 @@ textarea {
     }
 
     .cbi-value>.cbi-value-field {
-        display: inline-block
+        display: table-cell;
     }
 
     .cbi-page-actions>div>input,
@@ -1917,7 +1940,7 @@ textarea {
 
     .cbi-tabmenu>li,
     .tabs>li {
-        padding: .6rem 0
+        /* padding: .6rem 0 */
     }
 
     .cbi-tabmenu>li>a,
@@ -1958,7 +1981,8 @@ textarea {
         font-size: .9rem
     }
 
-    .cbi-section>h3 {
+    .cbi-section>h3,
+	.panel-title {
         font-size: 1.4rem
     }
 
@@ -1996,6 +2020,10 @@ textarea {
     .node-status-iptables>.main div>.cbi-map>form input[type=submit]+input[type=submit] {
         margin-top: 1rem
     }
+	
+	div.cbi-section, fieldset {
+		overflow-x: auto;
+	}
 }
 
 @media screen and (min-width:992px) {
