@@ -19,6 +19,13 @@ table {
     width: 100%
 }
 
+table {
+    border-spacing: 0;
+    border-collapse: collapse;
+    border: none;
+    margin: 0!important;
+}
+
 @font-face {
     font-family: icomoon;
     src: url(../fonts/icon.woff) format("woff");
@@ -70,6 +77,11 @@ h6 {
     font-weight: 400;
     line-height: 1;
     color: inherit
+}
+
+h4,
+em {
+    padding: .5rem;
 }
 
 html {
@@ -462,7 +474,14 @@ h2 {
 .cbi-section>h3,
 .panel-title,
 h3 {
-    font-size: 1.4rem
+    font-size: 1.4rem;
+    display: block;
+    line-height: 2.2rem;
+    padding-bottom: 0;
+    background: #2f2e2a;
+    padding-left: 8px;
+    border-bottom: 1px solid #1f1e1a;
+    border-top: 1px solid #1f1e1a;
 }
 /*
 h3 {
@@ -470,8 +489,8 @@ h3 {
 }
 */
 div.cbi-section, fieldset {
-    margin: 20px 0;
-    border: 1px;
+    margin-bottom: 1rem;
+    border: 1px solid rgba(37,35,35,.25);
     font-weight: normal;
     font-style: normal;
     line-height: 1;
@@ -480,24 +499,25 @@ div.cbi-section, fieldset {
     overflow-x: hidden;
     overflow-y: hidden;
     border-radius: 4px;
+    background: #2f2e2a;
 }
 
 .cbi-map-descr+fieldset {
     margin-top: 1rem
 }
 
+.cbi-map-descr+.cbi-section {
+    margin-top: 1rem
+}
+
 .panel-title {
-    width: 100%;
     display: block;
-    margin-bottom: 0;
-    padding: 5px;
-    border-bottom: 0px solid rgba(0, 0, 0, .05);
-    line-height: 1.5;
-    margin-bottom: 0rem;
-    letter-spacing: 0.1rem;
-    color: #fff;
-    font-weight: bold;
-    font-size: 15px;
+    line-height: 2.2rem;
+    padding-bottom: 0;
+    background: #2f2e2a;
+    padding-left: 8px;
+    border-bottom: 1px solid #1f1e1a;
+    border-top: 1px solid #1f1e1a;
 }
 
 legend {
@@ -594,7 +614,7 @@ h3 {
 
 .table .tr .td,
 .table .tr .th {
-    white-space: nowrap;
+    /* white-space: nowrap; */
     padding: 7.5px 10px;
 }
 
@@ -631,7 +651,8 @@ h3 {
     width: 100% !important;
     height: 1.2rem !important;
     background: #1f1e1a;
-    border: 1px solid #000 !important
+    border: 1px solid #000 !important;
+    max-width: initial !important;
 }
 
 #cpu_free>div>div,
@@ -656,11 +677,26 @@ h3 {
     line-height: 17px
 }
 
+/* 
 .cbi-value-field table,
 .cbi-value-field>table>tbody>tr>td,
 table table,
 td>table>tbody>tr>td {
     border: none
+}
+*/
+
+table>tbody>tr {
+    border-top: 1px solid #3f3e3a;
+}
+
+.cbi-rowstyle-1, .cbi-rowstyle-2, table>tbody>tr {
+    border-bottom: 1px solid #1f1e1a;
+}
+
+table>tbody>tr>td, table>tbody>tr>th, table>tfoot>tr>td, table>tfoot>tr>th, table>thead>tr>td, table>thead>tr>th {
+    padding: .5rem;
+    white-space: nowrap;
 }
 
 .cbi-button {
@@ -881,8 +917,8 @@ form.inline+form.inline {
     line-height: 1.25;
 }
 .table .td.cbi-value-field {
-    padding-left: 1px;
-    padding-right: 1px;
+    padding-left: .5rem;
+    padding-right: .5rem;
 }
 
 .cbi-value-description:before {
@@ -938,7 +974,7 @@ form.inline+form.inline {
     padding: .5rem;
     color: #1f1e1a;
     font-size: small;
-    /* background: #2f2e2a; */
+    background: #6f6e6a;
     text-shadow: none;
     color: #fff;
 }
@@ -1131,15 +1167,17 @@ svg {
 
 .ifacebox-head {
     line-height: 20px;
-    color: #fff;
+    color: #fafafa;
     text-shadow: none
 }
 
 .ifacebox-body {
-    /* box-shadow: inset 0 0 15px 0 #000; */
-    background: #3f3e3a;
+    box-shadow: inset 0 0 15px 0 #000;
+    background: #1f1e1a;
     min-height: 40px;
     line-height: 18px;
+    padding-top: 12px;
+    padding-bottom: 8px;
 }
 
 /* --- network-status --- */
@@ -1391,7 +1429,9 @@ input[name=nslookup] {
 }
 
 .notice {
-    background-color: #5BC0DE
+    background-color: #3f3e3a;
+    color: #fff;
+    overflow-y:hidden;
 }
 
 .darkMask {
@@ -2373,11 +2413,11 @@ body.modal-overlay-active #modal_overlay {
 }
 
 .cbi-dropdown[open] > ul.dropdown > li[selected] {
-	background: #b0d0f0;
+	background: #2f2e2a;
 }
 
 .cbi-dropdown[open] > ul.dropdown > li.focus {
-	background: linear-gradient(90deg, #a3c2e8 0%, #84aad9 100%);
+	background: linear-gradient(90deg, #2f2e2a 0%, #2f2e2a 100%);
 }
 
 .cbi-dropdown[open] > ul.dropdown > li:last-child {
@@ -2429,4 +2469,13 @@ body.modal-overlay-active #modal_overlay {
  white-space:pre;
  overflow:hidden;
  text-overflow:ellipsis
+}
+
+/* Passwall status dock background color */
+.block {
+ background-color: #3f3e3a !important;
+}
+
+#status_tcp_node,#status_udp_node,#status_socks5_node,#status_dns,#status_haproxy,#status_kcptun,#status_baidu,#status_google {
+ padding: 0 !important;
 }
